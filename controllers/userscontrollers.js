@@ -79,6 +79,7 @@ module.exports = {
         };
 
     // Create a User
+    
     async createUser(req, res) {
         try {
             const user = await User.create(req.body);
@@ -98,10 +99,10 @@ module.exports = {
           }
     
           await Thought.deleteMany({ _id: { $in: user.thoughts } });
-          return res.status(200).json({ message: 'Course and students deleted!'
-
-          });
+          return res.status(200).json({ message: 'Course and students deleted!'});
         } catch (err) {
           res.status(500).json(err);
         }
       };
+
+   
